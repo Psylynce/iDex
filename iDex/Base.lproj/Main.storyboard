@@ -1,59 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7qj-If-yo8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dSb-aB-rbf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Pokedex-->
-        <scene sceneID="iSA-dz-cFD">
+        <!--I Dex Collection View Controller-->
+        <scene sceneID="LYF-AW-E17">
             <objects>
-                <collectionViewController id="D44-Fv-Pbq" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="utx-Mt-Db4">
+                <collectionViewController id="He5-2V-mQV" customClass="iDexCollectionViewController" customModule="iDex" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Vpa-yH-4ay">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="h24-aJ-9pz">
-                            <size key="itemSize" width="50" height="50"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="u6f-Qc-Sku">
+                            <size key="itemSize" width="300" height="250"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="h1A-MJ-Tmi">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="iDexCell" id="Vgv-Ay-uIT" customClass="iDexCollectionViewCell" customModule="iDex" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4Q-dh-kGW">
+                                            <rect key="frame" x="54" y="24" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <outlet property="title" destination="J4Q-dh-kGW" id="2Ra-Nz-DvE"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="D44-Fv-Pbq" id="010-uw-duv"/>
-                            <outlet property="delegate" destination="D44-Fv-Pbq" id="cNc-Zg-KRX"/>
+                            <outlet property="dataSource" destination="He5-2V-mQV" id="Yng-d7-H9u"/>
+                            <outlet property="delegate" destination="He5-2V-mQV" id="wET-Qa-QIR"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Pokedex" id="dGn-e3-T93"/>
+                    <navigationItem key="navigationItem" id="1Ax-3e-WVb"/>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nbc-IN-DCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="apS-BZ-aUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="727" y="-305"/>
+            <point key="canvasLocation" x="1293" y="-358"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Fba-Ti-EPP">
+        <scene sceneID="gnf-rz-bjp">
             <objects>
-                <navigationController id="7qj-If-yo8" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dDC-aN-dNj">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dSb-aB-rbf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="igs-1S-Ftq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="D44-Fv-Pbq" kind="relationship" relationship="rootViewController" id="wCO-3P-Lkw"/>
+                        <segue destination="He5-2V-mQV" kind="relationship" relationship="rootViewController" id="wcc-U7-gCe"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="01w-P9-zuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CTe-35-ptf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-120" y="-305"/>
+            <point key="canvasLocation" x="481" y="-358"/>
         </scene>
     </scenes>
 </document>
